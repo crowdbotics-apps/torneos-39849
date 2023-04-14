@@ -22,6 +22,7 @@ class Clubes(models.Model):
     color1 = models.SmallIntegerField()
     color2 = models.SmallIntegerField()
     color3 = models.SmallIntegerField()
+    disciplinas = models.ManyToManyField("torneos.Disciplinas",blank=True,related_name="clubes_disciplinas",)
 class JugadoresDisciplinas(models.Model):
     'Generated Model'
     id_jugador = models.ForeignKey("torneos.Jugadores",on_delete=models.CASCADE,related_name="jugadoresdisciplinas_id_jugador",)
