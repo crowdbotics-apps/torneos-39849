@@ -19,7 +19,6 @@ class User(AbstractUser):
     everything that relates with an `User` is represented by this model.
     """
     name = models.CharField(null=True,blank=True,max_length=255,)
-    id_user = models.UUIDField(null=True,blank=True,)
     email = models.EmailField(null=True,blank=True,max_length=254,)
     access_level = models.SmallIntegerField(null=True,blank=True,)
     def get_absolute_url(self):
