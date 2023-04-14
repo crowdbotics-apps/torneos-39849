@@ -25,5 +25,15 @@ class JugadoresDisciplinas(models.Model):
     categoria = models.SmallIntegerField()
     rankeo = models.SmallIntegerField()
     puntaje = models.DecimalField(max_digits=5,decimal_places=2,)
+class Torneos(models.Model):
+    'Generated Model'
+    nombre = models.CharField(max_length=256,)
+    modalidad = models.BooleanField()
+    clubes = models.ManyToManyField("torneos.Clubes",blank=True,related_name="torneos_clubes",)
+    disciplina = models.ForeignKey("torneos.Disciplinas",on_delete=models.CASCADE,null=True,blank=True,related_name="torneos_disciplina",)
+class TorneosJugadores(models.Model):
+    'Generated Model'
+    torneo = models.ForeignKey("torneos.Torneos",on_delete=models.CASCADE,related_name="torneosjugadores_torneo",)
+    jugador = models.ForeignKey("torneos.Jugadores",on_delete=models.CASCADE,related_name="torneosjugadores_jugador",)
 
 # Create your models here.
