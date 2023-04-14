@@ -2,7 +2,6 @@ from django.conf import settings
 from django.db import models
 class Jugadores(models.Model):
     'Generated Model'
-    id_jugador = models.BigIntegerField()
     nombre = models.CharField(max_length=256,)
     email = models.EmailField(max_length=254,)
     edad = models.SmallIntegerField()
