@@ -30,10 +30,16 @@ class Torneos(models.Model):
     nombre = models.CharField(max_length=256,)
     modalidad = models.BooleanField()
     clubes = models.ManyToManyField("torneos.Clubes",blank=True,related_name="torneos_clubes",)
-    disciplina = models.ForeignKey("torneos.Disciplinas",on_delete=models.CASCADE,null=True,blank=True,related_name="torneos_disciplina",)
+    disciplina = models.ForeignKey("torneos.Disciplinas",null=True,blank=True,on_delete=models.CASCADE,related_name="torneos_disciplina",)
+    formato = models.ForeignKey("torneos.Formatos",on_delete=models.CASCADE,null=True,blank=True,related_name="torneos_formato",)
 class TorneosJugadores(models.Model):
     'Generated Model'
     torneo = models.ForeignKey("torneos.Torneos",on_delete=models.CASCADE,related_name="torneosjugadores_torneo",)
     jugador = models.ForeignKey("torneos.Jugadores",on_delete=models.CASCADE,related_name="torneosjugadores_jugador",)
+    horario_jugador = models.CharField(max_length=256,null=True,blank=True,)
+class Formatos(models.Model):
+    'Generated Model'
+    nombre = models.CharField(max_length=256,)
+    estructura = models.CharField(max_length=256,)
 
 # Create your models here.
