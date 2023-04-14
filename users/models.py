@@ -20,7 +20,7 @@ class User(AbstractUser):
     """
     name = models.CharField(null=True,blank=True,max_length=255,)
     id_user = models.UUIDField(null=True,blank=True,)
-    email = models.EmailField(max_length=254,null=True,blank=True,)
+    email = models.EmailField(null=True,blank=True,max_length=254,)
     access_level = models.SmallIntegerField(null=True,blank=True,)
     def get_absolute_url(self):
         return reverse('users:detail', kwargs={'username': self.username})
