@@ -6,10 +6,10 @@ class Jugadores(models.Model):
     nombre = models.CharField(max_length=256,)
     email = models.EmailField(max_length=254,)
     edad = models.SmallIntegerField()
-    disciplina1 = models.ForeignKey("torneos.Disciplinas",on_delete=models.SET_NULL,null=True,blank=True,related_name="jugadores_disciplina1",)
-    disciplina2 = models.ForeignKey("torneos.Disciplinas",on_delete=models.SET_NULL,null=True,blank=True,related_name="jugadores_disciplina2",)
-    disciplina3 = models.ForeignKey("torneos.Disciplinas",on_delete=models.SET_NULL,null=True,blank=True,related_name="jugadores_disciplina3",)
-    club = models.ForeignKey("torneos.Clubes",on_delete=models.CASCADE,null=True,blank=True,related_name="jugadores_club",)
+    disciplina1 = models.ForeignKey("torneos.Disciplinas",null=True,blank=True,on_delete=models.SET_NULL,related_name="jugadores_disciplina1",)
+    disciplina2 = models.ForeignKey("torneos.Disciplinas",null=True,blank=True,on_delete=models.SET_NULL,related_name="jugadores_disciplina2",)
+    disciplina3 = models.ForeignKey("torneos.Disciplinas",null=True,blank=True,on_delete=models.SET_NULL,related_name="jugadores_disciplina3",)
+    club = models.ForeignKey("torneos.Clubes",null=True,blank=True,on_delete=models.CASCADE,related_name="jugadores_club",)
 class Disciplinas(models.Model):
     'Generated Model'
     id_disciplina = models.UUIDField()
