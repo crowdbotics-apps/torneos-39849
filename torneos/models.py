@@ -9,11 +9,9 @@ class Jugadores(models.Model):
     disciplinas = models.ManyToManyField("torneos.Disciplinas",blank=True,related_name="jugadores_disciplinas",)
 class Disciplinas(models.Model):
     'Generated Model'
-    id_disciplina = models.UUIDField()
     nombre = models.CharField(max_length=256,)
 class Clubes(models.Model):
     'Generated Model'
-    id_club = models.UUIDField()
     nombre = models.CharField(max_length=256,)
     logo = models.BinaryField()
     color1 = models.SmallIntegerField()
