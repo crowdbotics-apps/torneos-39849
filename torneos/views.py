@@ -1,4 +1,4 @@
-from .models import TorneosJugadores, Torneos, Disciplinas
+from .models import Torneos, Disciplinas
 from django.views.generic import CreateView, UpdateView, DetailView, ListView
 from django.shortcuts import render
 
