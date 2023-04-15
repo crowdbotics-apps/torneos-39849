@@ -9,13 +9,6 @@ class Jugadores(models.Model):
 class Disciplinas(models.Model):
     'Generated Model'
     nombre = models.CharField(max_length=256,)
-class JugadoresDisciplinas(models.Model):
-    'Generated Model'
-    id_jugador = models.ForeignKey("torneos.Jugadores",on_delete=models.CASCADE,related_name="jugadoresdisciplinas_id_jugador",)
-    id_disciplina = models.ForeignKey("torneos.Disciplinas",on_delete=models.CASCADE,related_name="jugadoresdisciplinas_id_disciplina",)
-    categoria = models.SmallIntegerField()
-    rankeo = models.SmallIntegerField()
-    puntaje = models.DecimalField(max_digits=5,decimal_places=2,)
 class Torneos(models.Model):
     'Generated Model'
     nombre = models.CharField(max_length=256,)

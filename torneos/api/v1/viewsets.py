@@ -1,6 +1,6 @@
 from rest_framework import authentication
-from torneos.models import Disciplinas,Formatos,Jugadores,JugadoresDisciplinas,Torneos,TorneosJugadores
-from .serializers import DisciplinasSerializer,FormatosSerializer,JugadoresSerializer,JugadoresDisciplinasSerializer,TorneosSerializer,TorneosJugadoresSerializer
+from torneos.models import Disciplinas,Formatos,Jugadores,Torneos,TorneosJugadores
+from .serializers import DisciplinasSerializer,FormatosSerializer,JugadoresSerializer,TorneosSerializer,TorneosJugadoresSerializer
 from rest_framework import viewsets
 
 class JugadoresViewSet(viewsets.ModelViewSet):
@@ -12,11 +12,6 @@ class DisciplinasViewSet(viewsets.ModelViewSet):
     serializer_class = DisciplinasSerializer
     authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
     queryset = Disciplinas.objects.all()
-
-class JugadoresDisciplinasViewSet(viewsets.ModelViewSet):
-    serializer_class = JugadoresDisciplinasSerializer
-    authentication_classes = (authentication.SessionAuthentication, authentication.TokenAuthentication)
-    queryset = JugadoresDisciplinas.objects.all()
 
 class TorneosViewSet(viewsets.ModelViewSet):
     serializer_class = TorneosSerializer

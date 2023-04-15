@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from torneos.models import Disciplinas,Formatos,Jugadores,JugadoresDisciplinas,Torneos,TorneosJugadores
+from torneos.models import Disciplinas,Formatos,Jugadores,Torneos,TorneosJugadores
 
 class JugadoresSerializer(serializers.ModelSerializer):
 
@@ -11,12 +11,6 @@ class DisciplinasSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Disciplinas
-        fields = "__all__"
-
-class JugadoresDisciplinasSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = JugadoresDisciplinas
         fields = "__all__"
 
 class TorneosSerializer(serializers.ModelSerializer):
