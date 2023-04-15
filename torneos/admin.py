@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import Disciplinas,Torneos
+from .models import Disciplinas
 admin.site.register(Disciplinas)
-admin.site.register(Torneos)
 
 # Register your models here.
